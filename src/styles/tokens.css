@@ -1,0 +1,37 @@
+:root {
+  --white: #FFFFFF;
+  --paper: #161618;
+  --mist: rgba(255, 255, 255, 0.12);
+  --stone: #FFFFFF;
+  --graphite: #FFFFFF;
+  --charcoal: #141416;
+  --charcoal-elevated: #1C1C1F;
+  --ink: #FFFFFF;
+
+  /* ── The Green Standard (Sampled from "Graphics Wallah text" wordmark) ── */
+  --gw-green-1: #98FD01;   /* Neon lime stop at 0% */
+  --gw-green-2: #38E702;   /* Vibrant electric green stop at 50% */
+  --gw-green-3: #11CC03;   /* Rich emerald green stop at 100% */
+  
+  --gw-gradient: linear-gradient(135deg, #98FD01 0%, #38E702 50%, #11CC03 100%);
+  --gw-glow: #98FD01;
+  --gw-glow-rgb: 152, 253, 1;
+  --gw-glow-shadow: 0 0 20px rgba(152, 253, 1, 0.55), 0 0 45px rgba(56, 231, 2, 0.28);
+  --gw-glow-filter: drop-shadow(0 0 16px rgba(152, 253, 1, 0.6)) drop-shadow(0 0 32px rgba(56, 231, 2, 0.3));
+
+  --signal: #98FD01;
+
+  --font-display: 'Bricolage Grotesque Variable', sans-serif;
+  --font-body: 'Geist Sans', system-ui, sans-serif;
+
+  --radius-card: 24px;
+  --radius-pill: 999px;
+
+  --glass-blur: 24px;
+}
+
+@media (max-width: 820px), (pointer: coarse) {
+  :root {
+    --glass-blur: 16px;
+  }
+}

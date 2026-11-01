@@ -1,0 +1,23 @@
+{
+  "name": "graphics-wallah",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "copy-assets": "node scripts/copy-assets.mjs",
+    "optimize": "node scripts/optimise-frames.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.12.7",
+    "lenis": "^1.1.18",
+    "@fontsource-variable/bricolage-grotesque": "^5.1.0",
+    "@fontsource/geist-sans": "^5.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "sharp": "^0.33.5"
+  }
+}
