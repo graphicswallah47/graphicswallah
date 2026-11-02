@@ -41,13 +41,22 @@ export class FramePlayer {
           const url = `${basePath}/${frameNum}.webp`;
           
           const p = fetch(url)
-            .then(res => res.blob())
+            .then(res => {
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              return res.blob();
+            })
             .then(blob => {
               this.frames[i] = blob;
+            })
+            .catch(e => {
+              console.warn(`Frame ${i + 1} failed:`, e);
+              // Keep frames[i] as null â€” renderFrame handles missing frames gracefully
+            })
+            .finally(() => {
+              // âœ… Always increment â€” even on failure â€” so the loader never stalls at 000%
               fetchedCount++;
               if (onProgress) onProgress(fetchedCount / this.frameCount);
-            })
-            .catch(e => console.error(`Failed to fetch frame ${i + 1}:`, e));
+            });
           
           batchPromises.push(p);
         }
