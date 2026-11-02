@@ -38,6 +38,21 @@ export async function initPreloader() {
       }
     };
 
+    // âœ… Safety net: if frames take too long or all fail, force-complete after 12s
+    const safetyTimer = setTimeout(() => {
+      if (!isFinishing) {
+        console.warn('[Preloader] Safety timeout fired â€” forcing completion.');
+        fetchProg1 = 1;
+        fetchProg2 = 1;
+        decodeDone = true;
+        fontsImagesDone = true;
+        postersDone = true;
+        totalProgress = 1;
+        updateUI();
+        finishPreloader();
+      }
+    }, 12000);
+
     const fetchPromise1 = player1.loadFrames((p) => { fetchProg1 = p; recalcFetch(); });
     const fetchPromise2 = player2.loadFrames((p) => { fetchProg2 = p; recalcFetch(); });
 
@@ -114,6 +129,7 @@ export async function initPreloader() {
     });
 
     const finishPreloader = () => {
+      clearTimeout(safetyTimer); // âœ… Cancel safety fallback if we finish naturally
       const preloader = document.getElementById('preloader');
       const track = document.getElementById('preloader-track');
       const wipeCircle = document.getElementById('preloader-wipe-circle');
