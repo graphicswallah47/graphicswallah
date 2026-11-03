@@ -49,7 +49,7 @@
   max-height: 58svh;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 0 28px rgba(152, 253, 1, 0.42)) drop-shadow(0 0 70px rgba(56, 231, 2, 0.22));
+  filter: drop-shadow(0 0 24px rgba(152, 253, 1, 0.25)) drop-shadow(0 0 50px rgba(56, 231, 2, 0.15));
   transform-origin: center center;
 }
 
@@ -74,7 +74,7 @@
     max-width: 98vw;
   }
   #hero-name {
-    filter: drop-shadow(0 0 16px rgba(152, 253, 1, 0.42)) drop-shadow(0 0 40px rgba(56, 231, 2, 0.22));
+    filter: drop-shadow(0 0 18px rgba(152, 253, 1, 0.25)) drop-shadow(0 0 36px rgba(56, 231, 2, 0.14));
     max-height: 52svh;
   }
   #hero-caption {
@@ -91,7 +91,7 @@
     max-width: 98vw;
   }
   #hero-name {
-    filter: drop-shadow(0 0 12px rgba(152, 253, 1, 0.45)) drop-shadow(0 0 28px rgba(56, 231, 2, 0.25));
+    filter: drop-shadow(0 0 14px rgba(152, 253, 1, 0.22)) drop-shadow(0 0 28px rgba(56, 231, 2, 0.12));
     max-height: 48svh;
   }
 }
