@@ -26,7 +26,7 @@ const SEQUENCES = [
     id: 2,
     name: 'Sequence 2',
     srcDirs: [
-      path.join(ROOT_DIR, '2 animation black'),
+      path.join(ROOT_DIR, '2 animation new'),   // replaced: was "2 animation black"
       path.join(ROOT_DIR, 'assets', '2nd-animation'),
     ],
     outDirLg: path.join(ROOT_DIR, 'public', 'seq', '2', 'lg'),
